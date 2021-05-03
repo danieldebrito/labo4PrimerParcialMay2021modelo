@@ -9,7 +9,6 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 // ============================== mys modules ============================== //
 import { LayoutModule } from './layout/layout.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +20,7 @@ import { AuthModule } from './auth/auth.module';
     LayoutModule,
     // ****************** SERVICES MODULES ************************ //
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    // ****************** MYS MODULES ************************ //
-    AuthModule
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
