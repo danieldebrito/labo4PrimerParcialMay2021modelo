@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pplaboiv": {
+      "hosting": {
+        "labo4PrimerParcialMayo2021": [
+          "pplaboiv"
+        ]
+      }
+    }
+  }
+}

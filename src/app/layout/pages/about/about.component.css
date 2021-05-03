@@ -1,0 +1,93 @@
+.main-section {
+  font-family: 'Abel', sans-serif;
+  margin-top: 100px;
+}
+
+.detail-part {
+  margin-bottom: 10px;
+}
+
+.image-part {
+  background-color: #fff;
+}
+
+.image-part .user-img img {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.user-name h2 {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.information-button {
+  margin-bottom: 5px;
+}
+
+.user-name p {
+  font-size: 20px;
+}
+
+.user-detail p {
+  color: black;
+  padding-left: 30px;
+  margin: 5px;
+}
+
+.icon-section {
+  margin: 5px 0px;
+  padding-bottom: 10px;
+}
+
+.icon-section i {
+  margin: 0px 5px;
+  background-color: #d2d2d2;
+  color: black;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  padding-top: 4px;
+}
+
+.icon-section .fa-facebook:hover {
+  background-color: #425898;
+  color: #fff;
+}
+
+.icon-section .fa-twitter:hover {
+  background-color: #60A8ED;
+  color: #fff;
+}
+
+.icon-section .fa-instagram:hover {
+  background-color: #E73372;
+  color: #fff;
+}
+
+.user-detail span {
+  color: #b2b2b2;
+}
+
+.tab-head {
+  padding: 10px;
+}
+
+.tab-content {
+  padding-bottom: 10px;
+}
+
+.about-detail h5 {
+  margin-top: 10px;
+}
+
+.about-detail .website {
+  margin-top: 6px;
+}
+
+.contact-detail p {
+  color: black;
+  margin: 5px;
+}
