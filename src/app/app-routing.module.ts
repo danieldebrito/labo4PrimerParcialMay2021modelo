@@ -6,7 +6,11 @@ const routes: Routes = [
     path: '',
     redirectTo: '/bienvenido',
     pathMatch: 'full',
-  }
+  },/*
+  {
+    path: '',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  }*/
 ];
 
 @NgModule({

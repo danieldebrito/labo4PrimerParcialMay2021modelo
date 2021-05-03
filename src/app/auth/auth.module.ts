@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { AuthService } from './auth.service';
-
 import { LoginModule } from './pages/login/login.module';
+import { AuthRoutingModule } from './auth-routing.module';
+
 import { ForgotPasswordModule } from './pages/forgot-password/forgot-password.module';
 import { RegisterModule } from './pages/register/register.module';
 import { SendEmailModule } from './pages/send-email/send-email.module';
@@ -20,6 +20,7 @@ import { PermisoDenegadoModule } from './pages/permiso-denegado/permiso-denegado
     FormsModule,
     ReactiveFormsModule,
     LoginModule,
+    AuthRoutingModule,
     ForgotPasswordModule,
     RegisterModule,
     SendEmailModule,
