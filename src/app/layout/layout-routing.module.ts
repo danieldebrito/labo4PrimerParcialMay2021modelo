@@ -5,6 +5,11 @@ import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    redirectTo: '/bienvenido',
+    pathMatch: 'full',
+  },
   { path: 'bienvenido', component: HomeComponent }
 ];
 
