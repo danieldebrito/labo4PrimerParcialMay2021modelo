@@ -16,8 +16,9 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
+      <!--
       <li class="nav-item">
-        <a class="nav-link" routerLink="/chat">CHAT</a>
+        <a class="nav-link" routerLink="/busquedaPeliculas">Peli</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/jugadas">JUGADAS</a>
@@ -25,18 +26,15 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/juegos">PANEL</a>
       </li>
+    -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-          aria-expanded="false">JUEGOS</a>
+          aria-expanded="false">PELICULAS</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="juegos/ppt">Piedra Papel o Tijera</a>
-          <a class="dropdown-item" routerLink="juegos/tateti">TA TE TI</a>
-          <a class="dropdown-item" routerLink="juegos/memotest">Memotest</a>
-          <a class="dropdown-item" routerLink="juegos/memoriza">Memorizá</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/juegos">Panel</a>
+          <a class="dropdown-item" routerLink="busquedaPeliculas">Busqueda</a>
         </div>
       </li>
+      <!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
           aria-expanded="false">ENCUESTAS</a>
@@ -48,21 +46,19 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/about">ABOUT</a>
       </li>
+          -->
     </ul>
+
     <ul class="nav navbar-nav navbar-right" *ngIf="user$ | async as user; else login">
       <li class="nav-item dropdown nav-link-chico">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-           {{ user.email }}
+          {{ user.email }}
         </a>
-        <!-- 
-
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <img class="avatar" src="/assets/avatar/dott.jpg" alt="" srcset=""> {{ user.email }}
         </a>
-
-        -->
         <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink='/pacientePerfil'>Mi perfil</a>
           <div class="dropdown-divider"></div>
