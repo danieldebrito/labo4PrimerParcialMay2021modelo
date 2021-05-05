@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaisesRoutingModule } from './paises-routing.module';
 import { PaisesTablaComponent } from './components/paises-tabla/paises-tabla.component';
+import { PaisDetalleComponent } from './components/pais-detalle/pais-detalle.component';
 
 @NgModule({
   declarations: [
-    PaisesTablaComponent
+    PaisesTablaComponent,
+    PaisDetalleComponent
         
   ],
   imports: [
@@ -15,7 +17,8 @@ import { PaisesTablaComponent } from './components/paises-tabla/paises-tabla.com
     NgxPaginationModule
   ],
   exports: [
-    PaisesTablaComponent
+    PaisesTablaComponent,
+    PaisDetalleComponent
   ]
 })
 export class PaisesModule { }
