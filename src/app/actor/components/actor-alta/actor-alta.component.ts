@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Actor } from 'src/app/class/actor';
 import { Pais } from 'src/app/class/pais';
 import { ActoresService } from '../../actores.service';
 
@@ -17,25 +18,30 @@ export class ActorAltaComponent implements OnInit {
     apellido: new FormControl('', [Validators.required, Validators.maxLength(40), Validators.pattern("[a-zA-Z ]{1,41}")]),
     sexo: new FormControl('', [Validators.required]),
     fechaNacimiento: new FormControl('', [Validators.required]),
-    foto: new FormControl('', [Validators.required]),
-    paisOrigen: new FormControl(this.pais),
+    foto: new FormControl('/assets/actores/ted.jpg', [Validators.required]),
+    paisOrigen: new FormControl(''),
+    terminos: new FormControl('', [Validators.required]),
   });
 
-    // CUSTOM VALIDATOR
-    private spacesValidator(control: AbstractControl): null | object {
-      const nombre = <string>control.value;
-      const spaces = nombre.includes(' ');
-  
-      return spaces
-        ? { containsSpaces: true }
-        : null;
-    }
   constructor(
     private actoresSv: ActoresService
   ) { }
 
-  public cargarActor(){
-    this.actoresSv.addItem(this.formulario.getRawValue());
+
+  // CUSTOM VALIDATOR
+  private spacesValidator(control: AbstractControl): null | object {
+    const nombre = <string>control.value;
+    const spaces = nombre.includes(' ');
+
+    return spaces
+      ? { containsSpaces: true }
+      : null;
+  }
+
+  public cargarActor() {
+    let actor: Actor = this.formulario.getRawValue();
+    actor.paisOrigen = this.pais;
+    this.actoresSv.addItem(actor);
   }
 
   ngOnInit(): void {
