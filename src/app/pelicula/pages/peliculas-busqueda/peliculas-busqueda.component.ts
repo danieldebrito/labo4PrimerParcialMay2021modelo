@@ -13,6 +13,7 @@ import { PeliculaService } from 'src/app/pelicula/pelicula.service';
 export class PeliculasBusquedaComponent implements OnInit {
 
   public data: Pelicula[] = [];
+  public pelicula: Pelicula = {};
 
   constructor(private peluculaSv: PeliculaService) { }
 
@@ -21,6 +22,10 @@ export class PeliculasBusquedaComponent implements OnInit {
       this.data = elemets;
       console.log(elemets);
     });
+  }
+
+  public detallePeli(event){
+    this.pelicula = event.peliculaLanzada;
   }
 
   ngOnInit() {

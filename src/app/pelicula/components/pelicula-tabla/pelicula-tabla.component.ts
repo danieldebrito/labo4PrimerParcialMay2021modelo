@@ -1,26 +1,19 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pelicula } from 'src/app/class/pelicula';
-import { PeliculaService } from 'src/app/pelicula/pelicula.service';
 
 @Component({
   selector: 'app-pelicula-tabla',
   templateUrl: './pelicula-tabla.component.html',
   styleUrls: ['./pelicula-tabla.component.css']
 })
-export class PeliculaTablaComponent implements OnInit {
+export class PeliculaTablaComponent {
 
 @Input() data: Pelicula[] = [];
+@Output() lanzaItem = new EventEmitter();
 
-  constructor(private peluculaSv: PeliculaService) { }
+  constructor() { }
 
-  public getItems() {
-    this.peluculaSv.getItems().subscribe(elemets => {
-      this.data = elemets;
-      console.log(elemets);
-    });
-  }
-
-  ngOnInit() {
-    this.getItems();
+  public enviaItem(event){
+    this.lanzaItem.emit({ peliculaLanzada: event });
   }
 }
