@@ -30,16 +30,16 @@
         </div>
 
         <div class="col-sm-6">
-          <label for="apellido" class="form-label">fechaEstreno</label>
-          <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido"
-            formControlName="apellido">
+          <label for="fechaEstreno" class="form-label">Fecha de Estreno</label>
+          <input type="text" class="form-control" id="fechaEstreno" placeholder="Ingrese fecha de estreno"
+            formControlName="fechaEstreno">
           <small class="invalid"
-            *ngIf="formulario.controls.apellido.errors?.required && formulario.controls.apellido.touched">
-            El apellido es requerido
+            *ngIf="formulario.controls.fechaEstreno.errors?.required && formulario.controls.fechaEstreno.touched">
+            La fecha de estreno es requerido
           </small>
           <small class="invalid"
             *ngIf="formulario.controls.apellido.errors?.maxlength && formulario.controls.apellido.touched">
-            El apellido puede tener cuarenta caracteres maxino.
+            La fecha de estreno puede tener ocho caracteres maxino.
           </small>
         </div>
       </div>
@@ -47,24 +47,30 @@
       <div class="row">
 
         <div class="col-md-2">
-          <label for="sexo" class="form-label">Tipo</label>
-          <select class="form-control" id="sexo" formControlName="sexo">
+
+          <label for="tipo" class="form-label">Tipo</label>
+          <select class="form-control" id="tipo" formControlName="tipo">
             <option value="">Seleccione uno</option>
-            <option value="F">Femenino</option>
-            <option value="M">Masculino</option>
+            <option value="Terror">Terror</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Amor">Amor</option>
+            <option value="Triller">Triller</option>
+            <option value="Otros">Otros</option>
           </select>
-          <small class="invalid" *ngIf="formulario.controls.sexo.errors?.required && formulario.controls.sexo.touched">
-            El sexo es requerido
+          <small class="invalid" *ngIf="formulario.controls.tipo.errors?.required && formulario.controls.tipo.touched">
+            El tipo es requerido
           </small>
+          
         </div>
 
         <div class="col-md-5">
-          <label for="fechaNacimiento" class="form-label">cantPublico</label>
-          <input type="text" class="form-control" id="fechaNacimiento" placeholder="Ingrese fecha nacimiento"
-            formControlName="fechaNacimiento">
+
+          <label for="cantPublico" class="form-label">cant. Publico</label>
+          <input type="text" class="form-control" id="cantPublico" placeholder="Ingrese Cant. Publico"
+            formControlName="cantPublico">
           <small class="invalid"
-            *ngIf="formulario.controls.fechaNacimiento.errors?.required && formulario.controls.fechaNacimiento.touched">
-            La fecha de nacimiento es requerida
+            *ngIf="formulario.controls.cantPublico.errors?.required && formulario.controls.cantPublico.touched">
+            La cantidad de publico es requerida
           </small>
         </div>
 
@@ -74,7 +80,6 @@
         <small class="invalid" *ngIf="errorPais">
           El pais es requerido
         </small>
-
       </div>
 
     </div>
@@ -83,19 +88,13 @@
   <hr class="my-4">
 
   <div class="row">
-    <div class="col-md-12 mb-5">
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="terminos" formControlName="terminos">
-        <label class="form-check-label" for="terminos">
-          Aceptar términos y condiciones
-        </label>
-      </div>
-    </div>
+
     <div class="col-md-12 d-grid gap-2">
       <button type="submit" class="btn btn-primary btn-block"
         [disabled]="formulario.invalid || !formulario.controls.terminos.value">
         Crear Actor
       </button>
     </div>
+
   </div>
 </form>

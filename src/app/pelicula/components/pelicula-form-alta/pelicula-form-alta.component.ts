@@ -15,12 +15,11 @@ export class PeliculaFormAltaComponent implements OnInit {
   public errorPais = false;
 
   formulario = new FormGroup({
-    nombre: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern("[a-zA-Z ]{2,41}"), this.spacesValidator]),
-    apellido: new FormControl('', [Validators.required, Validators.maxLength(40), Validators.pattern("[a-zA-Z ]{1,41}")]),
-    sexo: new FormControl('', [Validators.required]),
-    fechaNacimiento: new FormControl('', [Validators.required]),
-    foto: new FormControl('/assets/actores/ted.jpg', [Validators.required]),
-    terminos: new FormControl('', [Validators.required]),
+    nombre: new FormControl('', [Validators.required, Validators.maxLength(40), Validators.pattern("[a-zA-Z ]{1,41}")]),
+    tipo: new FormControl('', [Validators.required]),
+    fechaEstreno: new FormControl('', [Validators.required]),
+    cantPublico: new FormControl('', [Validators.required, Validators.minLength(0), Validators.maxLength(100), Validators.pattern("^[0-9]*$")]),
+    fotoPelicula: new FormControl('/assets/peliculas/killbill.jpg', [Validators.required]),
   });
 
   constructor(
