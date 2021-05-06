@@ -11,7 +11,8 @@ import { ActoresService } from '../../actores.service';
 })
 export class ActorAltaComponent implements OnInit {
 
-  @Input() pais: Pais = {};
+  @Input() pais: Pais;
+  public errorPais = false;
 
   formulario = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(40), Validators.pattern("[a-zA-Z ]{2,41}"), this.spacesValidator]),
@@ -19,7 +20,7 @@ export class ActorAltaComponent implements OnInit {
     sexo: new FormControl('', [Validators.required]),
     fechaNacimiento: new FormControl('', [Validators.required]),
     foto: new FormControl('/assets/actores/ted.jpg', [Validators.required]),
-    paisOrigen: new FormControl(''),
+    // paisOrigen: new FormControl(''),
     terminos: new FormControl('', [Validators.required]),
   });
 
@@ -38,10 +39,30 @@ export class ActorAltaComponent implements OnInit {
       : null;
   }
 
+  public resetFrom() {
+    this.formulario.reset({
+      nombre: '',
+      apellido: '',
+      sexo: '',
+      fechaNacimiento: '',
+      foto: '',
+      terminos: '',
+    });
+    this.pais = {};
+  }
+
   public cargarActor() {
-    let actor: Actor = this.formulario.getRawValue();
-    actor.paisOrigen = this.pais;
-    this.actoresSv.addItem(actor);
+    if (this.pais.name === undefined) {
+      this.formulario.invalid;
+      this.errorPais = true;
+    } else {
+      this.errorPais = false;
+      let actor: Actor = this.formulario.getRawValue();
+      actor.paisOrigen = this.pais;
+      this.actoresSv.addItem(actor);
+
+      this.resetFrom();
+    }
   }
 
   ngOnInit(): void {
